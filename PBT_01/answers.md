@@ -1,5 +1,5 @@
 ### PHẦN A
-
+```
 ### Câu A1
 # Nguồn tham chiếu
 file 01_introduction_html_universe.md
@@ -28,8 +28,10 @@ Tab Network của Google Chrome cho biết:
 - Status Code request đầu tiên
 - Tổng thời gian load trang
 - Một request CSS
-![alt text](<Screenshot 2026-04-26 125813.png>)
+```
 
+![alt text](<anh_cau_A1.png>)
+```
 
 ### Câu A2
 # Nguồn tham chiếu:
@@ -189,4 +191,4 @@ Ví dụ cụ thể: một trang tin tức dùng <article> cho từng bài viế
 
 Tất nhiên, <div> vẫn có chỗ đứng. Khi chỉ cần một container để nhóm nội dung cho mục đích trình bày, chẳng hạn <div class="grid-container"> để áp dụng CSS Grid, thì dùng <div> là hợp lý.
 
-Tóm lại, semantic HTML không phải “tốn thời gian” mà là cách viết chuyên nghiệp, giúp trang vừa thân thiện với máy tìm kiếm, vừa dễ tiếp cận cho nhiều đối tượng.
+Tóm lại, semantic HTML không phải “tốn thời gian” mà là cách viết chuyên nghiệp, giúp trang vừa thân thiện với máy tìm kiếm, vừa dễ tiếp cận cho nhiều đối tượng.```
