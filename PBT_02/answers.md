@@ -24,8 +24,12 @@ Với type="number", trình duyệt kiểm tra giá trị nằm trong khoảng m
 
 Trường hợp 4: Form không submit được. Trình duyệt báo lỗi vì không khớp pattern.
 ```
-Giải thích: Pattern yêu cầu đúng 10 chữ số ([0-9]{10}). “abc123” chứa chữ cái và chỉ có 3 số, không hợp lệ.```
+Giải thích: Pattern yêu cầu đúng 10 chữ số ([0-9]{10}). “abc123” chứa chữ cái và chỉ có 3 số, không hợp lệ.
+```
 
 Trường hợp 5: Form không submit được. Trình duyệt báo lỗi vì độ dài < 8 ký tự.
 
 Giải thích: Thuộc tính minlength yêu cầu ít nhất 8 ký tự, nhưng “123” chỉ có 3 ký tự.
+
+# kêts quả thực tế hoàn toàn trùng khớp với dự đoán trước đó =D
+![alt text](<screenshots/anh_CauA2.png.png>)
