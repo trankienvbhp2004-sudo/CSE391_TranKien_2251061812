@@ -34,18 +34,16 @@ Tab Network của Google Chrome cho biết:
 
 
 ### Câu A2
-# Nguồn tham chiếu:
-file 04_visible_part_html.md
-phần: Semantic HTML5 — "Thẻ có ý nghĩa"; Media — Ảnh, Video, Audio.
+# Nguồn tham chiếu: file 04_visible_part_html.md  Semantic HTML5 — "Thẻ có ý nghĩa"; Media — Ảnh, Video, Audio.
 ---------------------------------------------------
 Trang web trên bị Google đánh giá SEO thấp chủ yếu vì thiếu tính semantic trong HTML.Dưới đây là 4 lỗi chính:
-
+```
 Dùng <div> cho header, menu, footer  
 → Các phần này nên dùng thẻ semantic như <header>, <nav>, <footer>.
 
 Logo chỉ là text trong <div>  
 → Nên dùng thẻ heading (<h1>) hoặc <span> trong <a> để Google hiểu đây là tên thương hiệu/trang.
-```
+
 Tiêu đề sản phẩm trong <div>  
 → Nên dùng thẻ heading (<h2>, <h3>) để thể hiện nội dung quan trọng.
 
@@ -79,7 +77,7 @@ Code sửa lại:
 
 ```
 ### Câu A3
-
+```
 Mô tả kết quả hiển thị:
 <div> là thẻ khối (block element) → mỗi nội dung trong <div> sẽ xuống dòng riêng.
 → Kết quả: “Hộp 1”, “Hộp 2”, “Hộp 3” mỗi cái nằm trên một dòng.
@@ -87,13 +85,11 @@ Mô tả kết quả hiển thị:
 → “Text A” và “Text B” sẽ hiển thị liền nhau trên cùng một dòng.
 <strong> cũng là inline, nhưng mặc định trình duyệt sẽ hiển thị chữ đậm.
 → “Text D” sẽ nằm cùng dòng với “Text C”, nhưng được in đậm.
-
+```
 ### Câu A4
-# nguồn Tham chiếu 
-05_tables_hyperlinks.md
-phần table-Bảng dữ liệu
+# nguồn Tham chiếu 05_tables_hyperlinks.md;phần table-Bảng dữ liệu
 ---------------------------------------------------
-
+```
 ***Sự khác nhau giữa <thead>, <tbody>, <tfoot>
 <thead>: chứa phần đầu bảng – thường là hàng tiêu đề.
 <tbody>: chứa phần nội dung chính của bảng – các hàng dữ liệu thực tế.
@@ -117,6 +113,7 @@ Làm giảm trải nghiệm người dùng.
 Bảng không linh hoạt khi hiển thị trên thiết bị di động.
 CSS Flexbox/Grid hiện đại giúp responsive dễ dàng hơn nhiều.
 ------------------------------------------------------------------
+```
 ### PHẦN C
 
 ### Câu C1
