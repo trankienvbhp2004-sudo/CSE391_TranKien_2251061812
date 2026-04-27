@@ -30,8 +30,8 @@ Tab Network của Google Chrome cho biết:
 - Một request CSS
 ```
 
-![alt text](<anh_cau_A1.png>)
-```
+![alt text](<screenshots/anh_cau_A1.png>)
+
 
 ### Câu A2
 # Nguồn tham chiếu:
@@ -45,7 +45,7 @@ Dùng <div> cho header, menu, footer
 
 Logo chỉ là text trong <div>  
 → Nên dùng thẻ heading (<h1>) hoặc <span> trong <a> để Google hiểu đây là tên thương hiệu/trang.
-
+```
 Tiêu đề sản phẩm trong <div>  
 → Nên dùng thẻ heading (<h2>, <h3>) để thể hiện nội dung quan trọng.
 
@@ -77,7 +77,7 @@ Code sửa lại:
     <p>© 2026 ShopTLU</p>
 </footer>
 
-
+```
 ### Câu A3
 
 Mô tả kết quả hiển thị:
@@ -120,6 +120,7 @@ CSS Flexbox/Grid hiện đại giúp responsive dễ dàng hơn nhiều.
 ### PHẦN C
 
 ### Câu C1
+```
 <header> <!-- header: chứa phần đầu trang (logo, menu, branding) -->
     <nav aria-label="main navigation"> <!-- nav: dùng cho khu vực chứa các link điều hướng chính -->
         <ul>
@@ -180,7 +181,7 @@ CSS Flexbox/Grid hiện đại giúp responsive dễ dàng hơn nhiều.
     <p>© 2026 ShopTLU</p>
 </footer>
 
-### Câu 2
+### Câu C2
 Nói rằng chỉ cần <div> cho mọi thứ là bỏ qua nhiều lợi ích thực tế của semantic HTML.
 
 Thứ nhất, về SEO: công cụ tìm kiếm dựa vào cấu trúc semantic để hiểu nội dung. Nếu trang có <header>, <nav>, <article>, Google sẽ nhận diện rõ đâu là điều hướng, đâu là nội dung chính. Ngược lại, toàn <div> khiến việc phân tích khó khăn, thứ hạng dễ bị giảm.
@@ -191,4 +192,21 @@ Ví dụ cụ thể: một trang tin tức dùng <article> cho từng bài viế
 
 Tất nhiên, <div> vẫn có chỗ đứng. Khi chỉ cần một container để nhóm nội dung cho mục đích trình bày, chẳng hạn <div class="grid-container"> để áp dụng CSS Grid, thì dùng <div> là hợp lý.
 
-Tóm lại, semantic HTML không phải “tốn thời gian” mà là cách viết chuyên nghiệp, giúp trang vừa thân thiện với máy tìm kiếm, vừa dễ tiếp cận cho nhiều đối tượng.```
+Tóm lại, semantic HTML không phải “tốn thời gian” mà là cách viết chuyên nghiệp, giúp trang vừa thân thiện với máy tìm kiếm, vừa dễ tiếp cận cho nhiều đối tượng.
+
+```
+### Phần B
+# câu B3
+```
+Lỗi 1: Dòng 1 — <!DOCTYPE> thiếu loại tài liệu — Sửa thành <!DOCTYPE html>
+Lỗi 2: Dòng 5 — <title> không đóng thẻ — Thêm </title>
+Lỗi 3: Dòng 6 — charset="utf8" sai chuẩn — Sửa thành charset="utf-8"
+Lỗi 4: Dòng 9 — <h1> không đóng đúng — Sửa thành </h1>
+Lỗi 5: Dòng 13 — <a> không đóng đúng — Sửa thành </a>
+Lỗi 6: Dòng 21 — <img src=iphone.jpg> thiếu dấu ngoặc kép và alt — Sửa thành <img src="iphone.jpg" alt="iPhone 16 Pro">
+Lỗi 7: Dòng 23 — Thẻ <b> và <p> lồng sai thứ tự — Sửa thành <p>Giá: <b>25.990.000đ</b></p>
+Lỗi 8: Dòng 29 — Bảng thiếu <thead>/<tbody> và dùng <td> cho tiêu đề — Sửa thành <th> trong <thead>
+Lỗi 9: Dòng 38 — Có 2 thẻ <main> (không hợp lệ) — Sửa thẻ thứ hai thành <aside>
+Lỗi 10: Dòng 43 — <p> trong footer không đóng — Thêm </p>
+Lỗi 11: Dòng 44 — </footer> không khớp vì <p> chưa đóng — Đã sửa bằng cách đóng <p> trước
+Lỗi 12: Dòng 45 — </body> thiếu </html> — Thêm </html> cuối file
