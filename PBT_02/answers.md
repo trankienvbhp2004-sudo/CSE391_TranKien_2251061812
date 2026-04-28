@@ -76,3 +76,70 @@ Ví dụ thực tế:Ảnh logo thương hiệu ở góc trang web → alt="Logo
 2. Cách 2 phù hợp cho ảnh cần thêm ngữ cảnh hoặc thông tin chi tiết, giúp người dùng (và cả screen reader) hiểu rõ hơn nội dung ảnh.
 Ví dụ thực tế:Trang sản phẩm E-Commerce: ảnh iPhone kèm chú thích giá bán → figcaption="iPhone 16 Pro Max — 25.990.000đ"
 
+# Phần C
+# Câu C1
+# nguồn tham khảo 
+```
+Lỗi 1: Dòng 2 — Input "Tên" không có <label for="...">, vi phạm accessibility  
+
+Lỗi 2: Dòng 4 — Input email không có name và id, thiếu label  
+
+Lỗi 3: Dòng 6 — Input mật khẩu không có name và id, thiếu label  
+
+Lỗi 4: Dòng 7 — Input nhập lại mật khẩu không có name và id, thiếu label  
+
+Lỗi 5: Dòng 9 — Input Phone dùng type="text", không có label đúng chuẩn, thiếu pattern  
+
+Lỗi 6: Dòng 11 — <select> không có name và id, thiếu label  
+
+Lỗi 7: Dòng 16 — Checkbox "Tôi đồng ý điều khoản" không có input, chỉ có label  
+
+Lỗi 8: Dòng 19 — Nút submit không có aria-label để hỗ trợ accessibility  
+```
+# Code sau sửa
+```
+<form>
+  <label for="name">Tên:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="Email của bạn" required>
+
+  <label for="password">Mật khẩu:</label>
+  <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+
+  <label for="confirm_password">Nhập lại mật khẩu:</label>
+  <input type="password" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" required>
+
+  <label for="phone">Số điện thoại:</label>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0901234567" required>
+
+  <label for="city">Thành phố:</label>
+  <select id="city" name="city" required>
+    <option value="">--Chọn--</option>
+    <option value="hanoi">Hà Nội</option>
+    <option value="hcm">TP.HCM</option>
+  </select>
+
+  <input type="checkbox" id="agree" name="agree" required>
+  <label for="agree">Tôi đồng ý điều khoản</label>
+
+  <input type="submit" value="Gửi" aria-label="Gửi form đặt hàng">
+</form>
+```
+# Câu C2
+1. pattern regex cho CMND/CCCD: ^\d{12}$
+-> bắt buộc đúng 12 kí tự
+pattern regex cho số tài khoản: ^\d{10,15}$
+→ Cho phép từ 10 đến 15 ký tự số.
+2. HTML5 validation chỉ chạy trên trình duyệt phía client, dễ bị bỏ qua hoặc vô hiệu hóa. Người dùng có thể tắt JavaScript, chỉnh sửa HTML, hoặc gửi request trực tiếp qua công cụ như Postman. Do đó, validation HTML5 chỉ là lớp kiểm tra cơ bản để cải thiện trải nghiệm người dùng, nhưng không thể thay thế kiểm tra bảo mật phía server.
+3. 3 loại validation HTML5 không lamd đucợ
+ So khớp mật khẩu: kiểm tra xem "Nhập lại mật khẩu" có giống với "Mật khẩu" hay không.
+
+Kiểm tra logic ngày tháng: ví dụ ngày giao hàng phải sau ngày đăng ký, hoặc không rơi vào ngày nghỉ lễ.
+
+Kiểm tra tính duy nhất: ví dụ email hoặc số tài khoản đã tồn tại trong hệ thống chưa.
+4. Hai rủi ro bảo mật nếu chỉ validate Frontend
+-Injection / dữ liệu giả mạo: Hacker có thể gửi dữ liệu không hợp lệ (SQL injection, XSS) trực tiếp đến server, bỏ qua validation HTML5.
+
+-Tấn công brute force / bypass: Người dùng có thể gửi nhiều request với dữ liệu sai hoặc cố tình phá vỡ quy tắc (ví dụ PIN không đúng định dạng), gây lỗi hoặc khai thác hệ thống.
