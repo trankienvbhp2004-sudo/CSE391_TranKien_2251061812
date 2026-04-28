@@ -12,7 +12,7 @@
 9. type="range"->thanh trượt(slider), giá trị trả về nằm trong khoảng min-max->chọn khoảng giá sản phẩm khi lọc
 10. type="file"->nút chọn file từ máy tính, kiểm tra có file được chọn , có thể giới hạn loại file->khách upload ảnh để đổi trả hàng
 # Câu A2
-# nguồn tham chiếu:
+# nguồn tham chiếu: phần Các input types HTML5 file 07_forms_interactive.md
 -trường hợp 1 thì fỏm sẽ không submit được và web báo lỗi.
  Vì thuộc tính required kiểm tra rỗng , nếu không có gì thì validation thát bại
 
@@ -33,3 +33,45 @@ Giải thích: Thuộc tính minlength yêu cầu ít nhất 8 ký tự, nhưng 
 
 # kêts quả thực tế hoàn toàn trùng khớp với dự đoán trước đó =D
 ![alt text](<screenshots/anh_CauA2.png.png>)
+
+# Câu A3
+# tham khảo phần Accesibility file 07_forms_interactive.md
+```
+1. Screen reader đọc nội dung của thẻ <label> và liên kết nó với input có id="email".
+
+Nhờ vậy, người khiếm thị sẽ nghe được “Email” trước khi nhập dữ liệu, thay vì chỉ nghe “edit box” chung chung.
+
+Điều này giúp họ hiểu rõ mục đích của ô nhập, tăng khả năng tiếp cận và giảm nhầm lẫn.
+2. Dùng khi có nhóm các input liên quan cùng một chủ đề.
+
+<fieldset> tạo khung nhóm, <legend> mô tả nội dung của nhóm.
+3.``` aria-label dùng để cung cấp mô tả cho thành phần không có văn bản hiển thị rõ ràng (ví dụ: icon button chỉ có hình ảnh, không có text).
+
+Nếu đã có <label> thì không nên dùng aria-label vì:
+
+<label> là cách chuẩn, được hỗ trợ tốt nhất cho cả SEO lẫn accessibility.
+
+Dùng cả hai có thể gây xung đột hoặc khiến screen reader đọc trùng lặp.
+```
+# Câu A4-Media
+1. giảm thời gian tải trang ban đầu, tiết kiệm băng thông, tăng hiệu suất cho trang có nhiều ảnh (ví dụ trang sản phẩm).
+Khi KHÔNG nên dùng: với ảnh quan trọng hiển thị ngay khi mở trang (logo, banner chính, ảnh hero), vì nếu lazy load thì người dùng sẽ thấy trễ hoặc trống.
+2. Trình duyệt khác nhau hỗ trợ định dạng video khác nhau.
+Cung cấp nhiều <source> giúp đảm bảo video chạy được trên hầu hết trình duyệt.
+-3 format phổ biến: MP4 (H.264), WebM, Ogg/Theora.
+3. Ý nghĩa: cung cấp văn bản thay thế cho ảnh, giúp screen reader đọc cho người khiếm thị, đồng thời hiển thị khi ảnh không tải được.
+
+Viết alt tốt cho 3 trường hợp:
+
+Ảnh sản phẩm iPhone 16 → alt="iPhone 16 màu đen, mặt trước và sau"
+
+Ảnh trang trí (decorative) → alt="" (để screen reader bỏ qua, tránh gây nhiễu)
+
+Ảnh biểu đồ doanh thu Q1/2026 → alt="Biểu đồ cột doanh thu quý 1 năm 2026, doanh thu tăng 20% so với quý trước".
+# Câu A5
+1. Cách 1 phù hợp cho ảnh đơn giản, chỉ cần alt để hỗ trợ accessibility.
+Ví dụ thực tế:Ảnh logo thương hiệu ở góc trang web → alt="Logo Apple"
+
+2. Cách 2 phù hợp cho ảnh cần thêm ngữ cảnh hoặc thông tin chi tiết, giúp người dùng (và cả screen reader) hiểu rõ hơn nội dung ảnh.
+Ví dụ thực tế:Trang sản phẩm E-Commerce: ảnh iPhone kèm chú thích giá bán → figcaption="iPhone 16 Pro Max — 25.990.000đ"
+
