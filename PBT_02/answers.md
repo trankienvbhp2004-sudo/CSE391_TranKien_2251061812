@@ -32,7 +32,7 @@ Trường hợp 5: Form không submit được. Trình duyệt báo lỗi vì đ
 Giải thích: Thuộc tính minlength yêu cầu ít nhất 8 ký tự, nhưng “123” chỉ có 3 ký tự.
 
 # kêts quả thực tế hoàn toàn trùng khớp với dự đoán trước đó =D
-![alt text](<screenshots/anh_CauA2.png.png>)
+![alt text](<screenshots/anh_CauA2.png>)
 
 # Câu A3
 # tham khảo phần Accesibility file 07_forms_interactive.md
