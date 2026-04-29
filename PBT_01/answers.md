@@ -212,26 +212,30 @@ Lỗi 12: Dòng 45 — </body> thiếu </html> — Thêm </html> cuối file
 ```
 
 # Câu B4
-
- 1. Thẻ semantic HTML5
+# chọn web shoppee.com
+ 1. 3 Thẻ semantic HTML5
  ```
 - `<header>`: nằm ở phần đầu trang, chứa logo và thanh tìm kiếm.
 - `<nav>`: nằm dưới header, chứa menu điều hướng.
 - `<footer>`: nằm cuối trang, chứa thông tin liên hệ và bản quyền.
 ```
- 2. Thẻ không dùng đúng semantic
+. Thẻ không dùng đúng semantic
 ```
 - `<div>` được dùng làm nút bấm thay vì `<button>`.
 - `<span>` được dùng làm liên kết thay vì `<a>`.
 ```
-3. Table
+2. Table
 ```
-- Nội dung hiển thị: bảng thông tin sản phẩm/khuyến mãi.
-- Có dùng `<tbody>`, nhưng không có `<thead>`.
+Trang Shopee.vn không sử dụng thẻ <table>. Thay vào đó, họ dùng <div> để hiển thị dữ liệu dạng bảng.
 ```
-4. Form
-```
-- Form tìm kiếm sản phẩm.
-- `action="/search"` và `method="GET"`.
-- Input types: `text`, `submit`.
-```
+3. Form
+
+**Action:** Không khai báo (xử lý bằng JavaScript).
+- **Method:** Không khai báo, mặc định là `GET`.
+- **Input types:**
+  - `text` (ô nhập từ khóa, mặc định vì không ghi rõ type).
+  - `submit` (nút tìm kiếm).
+
+# Phần D
+# link video youtube
+https://youtu.be/jJP7ZqeuQag
