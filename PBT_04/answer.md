@@ -38,8 +38,10 @@ css
 
 Bố cục:
 
-Code
-[ item1 ][ item2 ][ item3 ][ item4 ]
++--------+--------+--------+--------+
+| item1  | item2  | item3  | item4  |
++--------+--------+--------+--------+
+
 2. Flex-wrap với width + margin
 css
 .container { display: flex; flex-wrap: wrap; }
@@ -50,10 +52,14 @@ Mỗi item chiếm 45% + 2.5% + 2.5% = 50% chiều rộng.
 
 Bố cục:
 
-Code
-[ item1 ][ item2 ]
-[ item3 ][ item4 ]
-[ item5 ][ item6 ]
++-----------+-----------+
+|  item1    |   item2   |
++-----------+-----------+
+|  item3    |   item4   |
++-----------+-----------+
+|  item5    |   item6   |
++-----------+-----------+
+
 3. Flex với justify-content + align-items
 css
 .container { display: flex; justify-content: space-between; align-items: center; }
@@ -61,8 +67,8 @@ css
 
 Bố cục:
 
-Code
-item1       item2       item3
+item1             item2             item3
+
 4. Grid với 3 cột cố định
 css
 .container { display: grid; grid-template-columns: 200px 1fr 200px; gap: 20px; }
@@ -76,8 +82,10 @@ Cột 3: 200px
 
 Bố cục:
 
-Code
-[ item1 ][      item2 (giãn)      ][ item3 ]
++--------+----------------------+--------+
+| item1  |        item2         | item3  |
++--------+----------------------+--------+
+
 5. Grid repeat(3, 1fr)
 css
 .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -93,10 +101,14 @@ Hàng 3: item7 (chỉ chiếm cột đầu tiên)
 
 Bố cục:
 
-Code
-[ item1 ][ item2 ][ item3 ]
-[ item4 ][ item5 ][ item6 ]
-[ item7 ]
++--------+--------+--------+
+| item1  | item2  | item3  |
++--------+--------+--------+
+| item4  | item5  | item6  |
++--------+--------+--------+
+| item7  |        |        |
++--------+--------+--------+
+
  Tóm lại:
 
 Trường hợp 1: 1 hàng, 4 cột bằng nhau
@@ -108,3 +120,109 @@ Trường hợp 3: 1 hàng, 3 item cách đều
 Trường hợp 4: 1 hàng, 3 cột (200px – giãn – 200px)
 
 Trường hợp 5: 3 hàng, 3 cột, item cuối nằm hàng 3 cột 1
+### Phần C
+# Câu C1
+Navigation bar ngang (logo + menu + buttons)
+- Flexbox
+
+Flexbox rất phù hợp cho bố cục một chiều (hàng ngang).
+Dễ dàng căn giữa, giãn khoảng cách giữa các phần tử, và xử lý responsive khi menu co giãn.
+
+2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
+- Grid
+
+Grid mạnh mẽ cho bố cục hai chiều.
+Chỉ cần định nghĩa grid-template-columns: repeat(3, 1fr) là tự động chia đều cột, bất kể số lượng ảnh.
+
+Flexbox sẽ khó duy trì sự đồng đều khi số phần tử thay đổi.
+
+3. Layout blog (main content + sidebar)
+- Grid
+
+Grid cho phép định nghĩa rõ ràng tỷ lệ cột (ví dụ: 2fr 1fr).
+Dễ dàng giữ sidebar cố định bên cạnh nội dung chính, kể cả khi chiều cao khác nhau.
+Flexbox có thể dùng, nhưng Grid trực quan hơn cho bố cục 2 cột.
+
+4. Footer 4 cột thông tin (Về chúng tôi, Liên kết, Hỗ trợ, Liên hệ)
+- Grid
+
+Grid giúp chia đều 4 cột một cách gọn gàng.
+Responsive dễ dàng: có thể chuyển thành 2 cột hoặc 1 cột khi màn hình nhỏ.
+Flexbox cũng khả thi, nhưng Grid cho bố cục nhiều cột rõ ràng hơn.
+
+5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+- Kết hợp Flexbox + Grid
+
+Grid để chia bố cục tổng thể (ảnh, nội dung, nút).
+Flexbox bên trong phần nội dung để căn chỉnh nút luôn dính đáy (justify-content: space-between).
+
+Đây là tình huống điển hình cần kết hợp cả hai.
+# Câu C2
+1. Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+Nguyên nhân:
+
+.card không có cơ chế để đẩy nút xuống đáy.
+
+Khi nội dung text dài/ngắn khác nhau, chiều cao card thay đổi → nút bị lệch.
+
+Sửa:  
+Dùng Flexbox trong .card để chia bố cục theo cột, và ép nút xuống đáy bằng margin-top: auto.
+
+css
+.card-container { 
+  display: flex; 
+  flex-wrap: wrap; 
+}
+.card { 
+  width: 30%; 
+  margin: 1.5%; 
+  display: flex; 
+  flex-direction: column; 
+}
+.card img { width: 100%; }
+.card h3 { font-size: 18px; }
+.card .btn { 
+  padding: 10px; 
+  margin-top: auto; 
+}
+2. Hero items không căn giữa trong container 100vh
+Nguyên nhân:
+
+.hero chỉ có display: flex nhưng chưa thêm căn chỉnh.
+
+Mặc định Flexbox xếp item ở góc trái trên.
+
+Sửa:  
+Thêm justify-content: center và align-items: center.
+
+css
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;   /* căn giữa ngang */
+  align-items: center;       /* căn giữa dọc */
+}
+.hero-content {
+  text-align: center;
+}
+3. Sidebar bị co lại khi content quá dài
+Nguyên nhân:
+
+Flexbox mặc định cho phép các item co lại (flex-shrink: 1).
+
+Sidebar có width cố định nhưng vẫn bị ép nhỏ khi content chiếm nhiều chỗ.
+
+Sửa:  
+Ngăn sidebar co lại bằng flex-shrink: 0.
+
+css
+.layout { 
+  display: flex; 
+}
+.sidebar { 
+  width: 250px; 
+  flex-shrink: 0; 
+}
+.content { 
+  flex: 1; 
+}
