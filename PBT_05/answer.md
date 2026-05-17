@@ -24,3 +24,96 @@ Dễ bảo trì: logic mở rộng (progressive enhancement) rõ ràng hơn so v
 SEO & UX tốt hơn: Google ưu tiên trang web thân thiện di động.
  ```
  #  Câu A2
+ ```
+ | **[Breakpoint](ca://s?q=Bootstrap_breakpoints)** | **Kích thước (px)** | **Thiết bị đại diện** | **Ví dụ lưới sản phẩm** |
+| --- | --- | --- | --- |
+| **Extra small (xs)** | ``<576px`` | Điện thoại nhỏ | 1 cột |
+| **Small (sm)** | ``≥576px`` | Điện thoại lớn | 2 cột |
+| **Medium (md)** | ``≥768px`` | Máy tính bảng | 3 cột |
+| **Large (lg)** | ``≥992px`` | Laptop nhỏ | 4 cột |
+| **Extra large (xl)** | ``≥1200px`` | Laptop lớn / màn hình desktop | 5 cột |
+| **XXL (xxl)** | ``≥1400px`` | Màn hình rất lớn | 6 cột |
+
+Giải thích cách dùng
+-Mobile-First: mặc định CSS cho màn hình nhỏ, sau đó dùng min-width để mở rộng. Ví dụ: sản phẩm hiển thị 1 cột trên điện thoại, tăng dần lên 2–6 cột khi màn hình lớn hơn.
+-Desktop-First: mặc định CSS cho màn hình lớn, rồi dùng max-width để thu gọn xuống mobile. Ít được khuyên dùng vì khó bảo trì.
+
+Tại sao quan trọng?
+-Người dùng di động chiếm đa số → thiết kế từ mobile trước giúp trải nghiệm tốt hơn.
+-Tối ưu hiệu năng: tải ít CSS cho mobile, thêm CSS khi cần cho desktop.
+-Dễ mở rộng: logic “progressive enhancement” rõ ràng.
+```
+# Câu A3
+```
+| **Chiều rộng màn hình** | **.container width** | **Giải thích** |
+| --- | --- | --- |
+| **375px (iPhone SE)** | 100% (≈375px) | <576px → mặc định ``width: ``100%``. |
+| **600px** | 540px | ≥576px nhưng <768px → áp dụng rule đầu tiên. |
+| **800px** | 720px | ≥768px nhưng <992px → áp dụng rule thứ hai. |
+| **1000px** | 960px | ≥992px nhưng <1200px → áp dụng rule thứ ba. |
+| **1400px** | 1140px | ≥1200px → áp dụng rule cuối cùng. |
+```
+# Câu A4
+
+1. Variables
+Cho phép định nghĩa biến để tái sử dụng giá trị (màu sắc, font-size, spacing…).
+
+Ví dụ:
+scss
+$primary-color: #3498db;
+
+button {
+  background-color: $primary-color;
+}
+2. Nesting
+Viết CSS lồng nhau theo cấu trúc HTML, giúp code gọn gàng và dễ đọc.
+
+Ví dụ:
+scss
+nav {
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+    }
+  }
+}
+3. Mixins
+Định nghĩa khối CSS tái sử dụng, có thể truyền tham số.
+
+Ví dụ:
+scss
+@mixin flex-center($gap: 10px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+.container {
+  @include flex-center(20px);
+}
+4. @extend / Inheritance
+Cho phép một selector kế thừa thuộc tính từ selector khác.
+
+Ví dụ:
+scss
+.message {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+Tại sao trình duyệt KHÔNG đọc được file .scss?
+SCSS là ngôn ngữ tiền xử lý (preprocessor), không phải CSS thuần.
+Trình duyệt chỉ hiểu CSS, không hiểu cú pháp SCSS.
+
+ Cần bước biên dịch (compile) SCSS → CSS bằng công cụ như Sass CLI, Webpack, Gulp, hoặc tích hợp trong framework (React, Angular, Vue…).
